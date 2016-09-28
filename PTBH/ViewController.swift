@@ -19,13 +19,13 @@ class ViewController: UIViewController {
     var alertView:UIAlertView = UIAlertView()
     
     @IBAction func btnCaculate(_ sender: AnyObject) {
-            if NumA.text == "" || numB.text == "" || numC.text == "" {
+        if NumA.text == "" || numB.text == "" || numC.text == "" {
             alertView.title = "error"
             alertView.message = "Hay dien du cac dong!"
             alertView.addButton(withTitle: "OK")
             alertView.show()
         }
-        else if Int(NumA.text!) != nil || Int(numB.text!) != nil || Int(numC.text!) != nil{
+        else if Int(NumA.text!) != nil && Int(numB.text!) != nil && Int(numC.text!) != nil{
                 let a : Int = Int(NumA.text!)!
                 let b : Int = Int(numB.text!)!
                 let c : Int = Int(numC.text!)!
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
                 alertView.show()
             }
         }
-        else {
+        else if Int(NumA.text!) == nil || Int(numB.text!) == nil || Int(numC.text!) == nil{
             alertView.title = "error"
             alertView.message = "Ban phai nhap chu so"
             alertView.addButton(withTitle: "OK")
